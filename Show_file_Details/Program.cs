@@ -16,7 +16,7 @@ namespace Show_file_Details
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new search_bt());
         }
     }
 }
