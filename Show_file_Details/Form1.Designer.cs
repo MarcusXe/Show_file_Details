@@ -41,6 +41,8 @@
             this.fileSize_tb = new System.Windows.Forms.TextBox();
             this.labelssd = new System.Windows.Forms.Label();
             this.DirName_tb = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.truetype_tb = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // filePath_tb
@@ -157,10 +159,28 @@
             // 
             // DirName_tb
             // 
-            this.DirName_tb.Location = new System.Drawing.Point(81, 137);
+            this.DirName_tb.Location = new System.Drawing.Point(78, 136);
             this.DirName_tb.Name = "DirName_tb";
             this.DirName_tb.Size = new System.Drawing.Size(297, 20);
             this.DirName_tb.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 169);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 17);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "mayBe:";
+            this.label5.UseCompatibleTextRendering = true;
+            this.label5.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // truetype_tb
+            // 
+            this.truetype_tb.Location = new System.Drawing.Point(78, 166);
+            this.truetype_tb.Name = "truetype_tb";
+            this.truetype_tb.Size = new System.Drawing.Size(297, 20);
+            this.truetype_tb.TabIndex = 9;
             // 
             // search_bt
             // 
@@ -168,12 +188,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(403, 415);
+            this.Controls.Add(this.truetype_tb);
             this.Controls.Add(this.DirName_tb);
             this.Controls.Add(this.fileSize_tb);
             this.Controls.Add(this.errorLog_lb);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.fileExt_tb);
             this.Controls.Add(this.fileName_tb);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.labelssd);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -207,6 +229,8 @@
         private System.Windows.Forms.TextBox fileSize_tb;
         private System.Windows.Forms.Label labelssd;
         private System.Windows.Forms.TextBox DirName_tb;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox truetype_tb;
     }
 }
 

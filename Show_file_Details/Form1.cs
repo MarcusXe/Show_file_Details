@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using dbutil;
 
 
 namespace Show_file_Details
@@ -70,16 +71,24 @@ namespace Show_file_Details
                 file.LastAccessTime.ToString();//最后访问时间
                 file.LastWriteTime.ToString();//最后修改时间
                 DirName_tb.Text = file.DirectoryName;//路径
+                dbutil.initConn();
                 //file.
                 FileStream fs = new FileStream(filePath_tb.Text, FileMode.Open);
                 byte[] data = new byte[50];
                 fs.Read(data, 0, 50);
+                string t = file_info.ToHexString(data);
+                if (file_info.ToHexString(data).ToLower().StartsWith(file_info.getIdCodeFromJson(file.Extension.Substring(1)).ToLower()))
+                {
+                    truetype_tb.Text = file.Extension;
+                }
                 fs.Close();
                 //errorLog_lb.Text = file_info.ToHexString(data);
             }
             catch (Exception e1)
             {
-                errorLog_lb.Text = e1.ToString();
+                //errorLog_lb.Text = e1.ToString();
+                //FileStream fs = new FileStream(filePath_tb.Text, FileMode.Open);
+                myerrors.showErrors(e1);
                // Console.WriteLine(e1);
             }
         }
